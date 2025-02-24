@@ -36,8 +36,7 @@ Este es el repositorio de mi portafolio personal, desarrollado con [Astro](https
 ├── astro.config.mjs
 ├── package.json
 ├── tsconfig.json
-└── README.md
-
+└── README.md ```
 ## Correr el proyecto en desarrollo
 
 1. Clonar el repositorio
