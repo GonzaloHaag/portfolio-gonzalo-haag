@@ -1,0 +1,251 @@
+<section class="flex flex-col gap-y-6 py-20 bg-slate-900" id="proyectos">
+    <h2 class="text-3xl md:text-4xl text-center font-semibold text-orange-400">
+        Proyectos destacados
+    </h2>
+    <ul class="w-full flex flex-wrap items-center justify-center gap-4 text-slate-100 px-4">
+        <li>
+            <button
+                type="button"
+                class="my-button-selector bg-slate-700 py-2 px-6 rounded flex items-center justify-center text-center border border-gray-200/40 hover:bg-slate-600 transition-colors duration-200 cursor-pointer"
+                data-tag="all"
+            >
+                Todos
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="my-button-selector py-2 px-6 rounded flex items-center justify-center text-center border border-gray-200/40 hover:bg-slate-600 transition-colors duration-200 cursor-pointer"
+                data-tag="react"
+            >
+                React
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="my-button-selector py-2 px-6 rounded flex items-center justify-center text-center border border-gray-200/40 hover:bg-slate-600 transition-colors duration-200 cursor-pointer"
+                data-tag="nextjs"
+            >
+                Next.js
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="my-button-selector py-2 px-6 rounded flex items-center justify-center text-center border border-gray-200/40 hover:bg-slate-600 transition-colors duration-200 cursor-pointer"
+                data-tag="typescript"
+            >
+                TypeScript
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="my-button-selector py-2 px-6 rounded flex items-center justify-center text-center border border-gray-200/40 hover:bg-slate-600 transition-colors duration-200 cursor-pointer"
+                data-tag="astro"
+            >
+                Astro
+            </button>
+        </li>
+        <li>
+            <button
+                type="button"
+                class="my-button-selector py-2 px-6 rounded flex items-center justify-center text-center border border-gray-200/40 hover:bg-slate-600 transition-colors duration-200 cursor-pointer"
+                data-tag="wordpress"
+            >
+                Wordpress
+            </button>
+        </li>
+    </ul>
+    <div
+        id="projects-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 class-container"
+    >
+        <!-- Los proyectos se insertarán aquí dinámicamente -->
+    </div>
+</section>
+<script>
+    type Icons =
+        | "react"
+        | "nextjs"
+        | "typescript"
+        | "wordpress"
+        | "astro"
+        | "shadcn"
+        | "tailwindcss"
+        | "postgresql"
+        | "prisma";
+    interface Projects {
+        id: string;
+        title: string;
+        description: string;
+        imageUrl: string;
+        link: string;
+        linkGithub:string;
+        tags: Icons[];
+    }
+    const projectsIcons: Record<Icons, string> = {
+        react: "/icons/LogosReact.svg",
+        nextjs: "/icons/DeviconNextjs.svg",
+        typescript: "/icons/DeviconTypescript.svg",
+        wordpress: "/icons/BiWordpress.svg",
+        astro: "/icons/CatppuccinAstro.svg",
+        shadcn: "/icons/SimpleIconsShadcnui.svg",
+        tailwindcss: "/icons/DeviconTailwindcss.svg",
+        postgresql: "/icons/DeviconPostgresql.svg",
+        prisma: "/icons/CatppuccinPrisma.svg",
+    };
+    const projects: Projects[] = [
+        {
+            id: crypto.randomUUID(),
+            title: "Dashboard de Control Empresarial",
+            description:
+                "Controla clientes, productos y pedidos con un dashboard en tiempo real para ventas y finanzas.",
+            imageUrl: "/assets/projects/sistema_dashboard.webp",
+            link: "https://system-dashboard-nextjs-dev.vercel.app/dashboard",
+            linkGithub:"https://github.com/GonzaloHaag/system_dashboard_nextjs_dev",
+            tags: [
+                "typescript",
+                "nextjs",
+                "tailwindcss",
+                "postgresql",
+                "prisma",
+                "shadcn",
+            ],
+        },
+        {
+            id: crypto.randomUUID(),
+            title: "TesloShop",
+            description:
+                "Ecommerce de productos con carrito de compras y pagos con paypal",
+            imageUrl: "/assets/projects/tesloshop.webp",
+            link: "https://gh-tienda-tesloshop.vercel.app/",
+            linkGithub:"https://github.com/GonzaloHaag/Teslo-shop",
+            tags: [
+                "typescript",
+                "nextjs",
+                "tailwindcss",
+                "postgresql",
+                "prisma",
+                "shadcn",
+            ],
+        },
+        {
+            id: crypto.randomUUID(),
+            title: "Catálogo Digital con WhatsApp",
+            description:
+                "Catálogo online para explorar productos y realizar pedidos directamente por WhatsApp.",
+            imageUrl: "/assets/projects/catalogo_alibe.webp",
+            link: "https://catalogo-alibe.vercel.app/",
+            linkGithub:"https://github.com/GonzaloHaag/catalogo_alibe",
+            tags: ["react", "typescript", "tailwindcss", "shadcn"],
+        },
+        {
+            id: crypto.randomUUID(),
+            title: "Books Challenge",
+            description:
+                "Busca libros, filtra por categoría y páginas, y organiza tus lecturas favoritas.",
+            imageUrl: "/assets/projects/books_challenge.webp",
+            link: "https://booskchallenge.netlify.app/",
+            linkGithub:"https://github.com/GonzaloHaag/booksChallenge",
+            tags: ["react", "typescript"],
+        },
+        {
+            id: crypto.randomUUID(),
+            title: "Baterías Giagnoni",
+            description:
+                "Landing page para un proveedor líder de baterías en Argentina, con auxilio 24/7 y reciclaje ecológico.",
+            imageUrl: "/assets/projects/bateriasgiagnoni.webp",
+            link: "https://bateriasgiagnoni.com.ar/",
+            linkGithub:"https://github.com/GonzaloHaag/baterias-dg",
+            tags: ["astro", "typescript","tailwindcss"],
+        },
+        {
+            id: crypto.randomUUID(),
+            title: "Clon de la WEB de los ESLAND 2024",
+            description:
+                "Clon interactivo y responsive de la página oficial de ESLAND. Demuestra habilidades en replicación de diseños y optimización de experiencia de usuario.",
+            imageUrl: "/assets/projects/clon-esland.webp",
+            link: "https://clon-esland-web.vercel.app/",
+            linkGithub:"https://github.com/GonzaloHaag/Clon-Esland-Web",
+            tags: ["astro", "typescript","tailwindcss"],
+        },
+        {
+            id: crypto.randomUUID(),
+            title: "Servicios viales",
+            description:
+                "Página web para Servicios viales, empresa lider en importación y distribución de Filtros, Repuestos, GET y Rodajes para equipos pesados",
+            imageUrl: "/assets/projects/sv.webp",
+            link: "https://sv.com.ar/",
+            linkGithub:"https://sv.com.ar/",
+            tags: ["wordpress"],
+        },
+    ];
+
+    const buttons = document.querySelectorAll(".my-button-selector");
+    const projectsContainer = document.getElementById(
+        "projects-container",
+    ) as HTMLDivElement;
+
+    function renderProjects(filter: string) {
+        projectsContainer.innerHTML = ""; // Limpiar los proyectos antes de renderizar
+
+        const filteredProjects =
+            filter === "all"
+                ? projects
+                : projects.filter((project) =>
+                      project.tags.includes(filter as Icons),
+                  );
+
+        filteredProjects.forEach((project) => {
+            const icons = project.tags
+                .map(
+                    (tag) =>
+                        `<img src="${projectsIcons[tag]}" title="${tag}" alt="${tag}" class="w-6 h-6" loading="lazy" decoding="async" />`,
+                )
+                .join("");
+            const projectCard = `
+                <div class="bg-slate-900 text-slate-200 rounded-lg shadow-md shadow-white flex flex-col gap-y-0 w-full h-full group fade-in hover:shadow-xl">
+                    <div class="relative w-full h-60 overflow-hidden rounded-lg">
+                        <div class="absolute rounded-lg w-full h-full inset-0 bg-black/85 z-10 opacity-0 invisible translate-y-100 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center">
+                             <div class="flex items-center justify-center gap-x-4 w-full p-4">
+                                 <a href="${project.link}" target="_blank" class="text-slate-900 text-sm flex items-center justify-center gap-x-2 bg-slate-200 rounded-md hover:bg-slate-400 transition-colors duration-300 w-full p-2">
+                                    <svg class="w-6 h-6 fill-slate-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+                                </a>
+                                 <a href="${project.linkGithub}" target="_blank" class="text-slate-900 text-sm flex items-center justify-center gap-x-2 bg-slate-200 rounded-md hover:bg-slate-400 transition-colors duration-300 w-full p-2">
+                                    <svg class="w-6 h-6 fill-slate-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-full rounded-lg object-fit object-center" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="flex flex-col p-4">
+                        <h4 class="font-semibold text-lg">${project.title}</h4>
+                        <p class="text-pretty text-base text-slate-300">${project.description}</p>
+                        <div class="flex items-center gap-2 mt-2 w-full">
+                        ${icons}
+                    </div>
+                    </div>
+                </div>
+            `;
+            projectsContainer.innerHTML += projectCard;
+        });
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedTag = button.getAttribute("data-tag");
+
+            // Actualizar clases de botones
+            buttons.forEach((btn) => btn.classList.remove("bg-slate-700"));
+            button.classList.add("bg-slate-700");
+
+            // Renderizar proyectos filtrados
+            renderProjects(selectedTag ?? "all");
+        });
+    });
+
+    // Renderizar todos los proyectos al inicio
+    renderProjects("all");
+</script>

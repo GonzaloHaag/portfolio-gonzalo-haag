@@ -1,0 +1,108 @@
+<div class="block md:hidden">
+    <button
+        aria-label="abrir sidebar"
+        type="button"
+        class="peer relative z-10 cursor-pointer"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2em"
+            height="2em"
+            viewBox="0 0 24 24"
+            ><g
+                fill="none"
+                stroke="#ffffff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                ><path
+                    stroke-dasharray="16"
+                    stroke-dashoffset="16"
+                    d="M19 5h-14"
+                    ><animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.2s"
+                        values="16;0"></animate></path
+                ><path
+                    stroke-dasharray="10"
+                    stroke-dashoffset="10"
+                    d="M19 12h-9"
+                    ><animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.2s"
+                        dur="0.2s"
+                        values="10;0"></animate></path
+                ><path
+                    stroke-dasharray="16"
+                    stroke-dashoffset="16"
+                    d="M19 19h-14"
+                    ><animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.4s"
+                        dur="0.2s"
+                        values="16;0"></animate></path
+                ><path
+                    stroke-dasharray="10"
+                    stroke-dashoffset="10"
+                    d="M7 9l-3 3l3 3"
+                    ><animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.6s"
+                        dur="0.2s"
+                        values="10;0"></animate></path
+                ></g
+            ></svg
+        >
+    </button>
+    {/* Sidebar */}
+    <div
+        class="fixed md:hidden top-0 -right-full h-dvh z-0 peer-focus:z-50 w-9/12 bg-slate-200 opacity-0 invisible peer-focus:opacity-100 peer-focus:visible peer-focus:right-0 transition-all duration-300"
+    >
+        <ul class="flex flex-col gap-y-6 md:hidden list-none items-center text-slate-950 mt-10">
+            <li>
+                <a
+                    title="Inicio"
+                    class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-full after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
+                    href="#">Inicio</a
+                >
+            </li>
+            <li>
+                <a
+                    title="Experiencia"
+                    class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-0 after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
+                    href="#experiencia">Experiencia</a
+                >
+            </li>
+            <li>
+                <a
+                    title="Proyectos"
+                    class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-0 after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
+                    href="#proyectos">Proyectos</a
+                >
+            </li>
+            <li>
+                <a
+                    title="Habilidades"
+                    class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-0 after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
+                    href="#habilidades">Habilidades</a
+                >
+            </li>
+            <li>
+                <a
+                    title="Contacto"
+                    class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-0 after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
+                    href="#">Contacto</a
+                >
+            </li>
+        </ul>
+    </div>
+    {/*Overlay */}
+    <div
+        class="fixed md:hidden w-screen h-dvh inset-0 bg-black/60 -z-10 invisible opacity-0 peer-focus:opacity-100 peer-focus:z-20 transition-opacity duration-300 peer-focus:visible"
+    >
+    </div>
+</div>

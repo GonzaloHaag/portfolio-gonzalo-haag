@@ -1,0 +1,134 @@
+<section
+    class="w-full bg-slate-950 min-h-dvh flex flex-col items-center justify-center text-center text-slate-100 overflow-hidden"
+    id="inicio"
+>
+    <div class="flex flex-col items-center p-4">
+        <div class="flex flex-col text-center">
+            <h1
+                class="text-4xl md:text-7xl font-semibold text-orange-600"
+                id="name"
+            >
+                GONZALO HAAG
+            </h1>
+            <h2
+                class="text-xl md:text-3xl font-semibold text-slate-400"
+                id="role"
+            >
+                Fullstack Developer
+            </h2>
+            <p
+                class="text-pretty mt-4 text-center text-base md:text-lg max-w-[75ch]"
+                id="description"
+            >
+                Desarrollador Fullstack con experiencia en tecnologías web y
+                móviles. Especializado en PHP (Symfony), React.js (Next.js) y
+                bases de datos SQL. Desarrollo soluciones escalables y
+                optimizadas, asegurando integración eficiente de APIs y gestión
+                de servidores con Docker. Mi enfoque se centra en la creación de
+                aplicaciones dinámicas y eficientes, tanto en el frontend como
+                en el backend, con un fuerte énfasis en la calidad del código y
+                la experiencia del usuario.
+            </p>
+            <div
+                class="flex flex-col md:flex-row items-center justify-center gap-y-4 gap-x-6 mt-4"
+            >
+                <a
+                    type="button"
+                    title="Descargar cv"
+                    class="flex items-center gap-x-2 border border-gray-600/40 rounded p-2 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200"
+                    href="/GONZALOHAAGCV.pdf"
+                    target="_blank"
+                    id="button_cv"
+                >
+                    <svg
+                        width={20}
+                        height={20}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                    >
+                        <path
+                            d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM216 232l0 102.1 31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31L168 232c0-13.3 10.7-24 24-24s24 10.7 24 24z"
+                        ></path></svg
+                    >Descargar currículum
+                </a>
+                <a
+                    type="button"
+                    title="Enviar email"
+                    class="flex items-center gap-x-2 border border-gray-600/40 rounded p-2 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200"
+                    href="mailto:gonzalohaag13@gmail.com"
+                    target="_blank"
+                    id="button_email"
+                >
+                    <svg
+                        width={20}
+                        height={20}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"
+                        ></path></svg
+                    >gonzalohaag13@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    import { gsap } from "gsap";
+    import SplitType from "split-type";
+    const name = new SplitType("#name", { types: "words,chars" });
+    const role = new SplitType("#role", { types: "words,chars" });
+    const description = new SplitType("#description", { types: "lines" });
+    const buttonCv = document.getElementById('button_cv');
+    const buttonEmail = document.getElementById('button_email');
+    name.chars?.forEach((char, index) => {
+        gsap.from(char, {
+            y: gsap.utils.random(-150, 150),
+            x: gsap.utils.random(-300, 300),
+            rotate: gsap.utils.random(-360, 360),
+            scale: gsap.utils.random(0, 2),
+            opacity: 0,
+            duration: 1,
+            ease: "back.out",
+            delay: index * 0.01,
+        });
+    });
+    role.chars?.forEach((char, index) => {
+        gsap.from(char, {
+            y: gsap.utils.random(-150, 150),
+            scale: gsap.utils.random(0, 2),
+            opacity: 0,
+            duration: 0.75,
+            ease: "back.out",
+            delay: index * 0.03,
+        });
+    });
+    description.lines?.forEach((char,index) => {
+        gsap.from(char, {
+            x: gsap.utils.random(-300, 300),
+            opacity: 0,
+            duration: 0.5,
+            ease: "back.out",
+            delay: index * 0.05,
+        });
+    });
+    gsap.from(buttonCv,{
+        y: 100,
+        scale:0.5,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.out",
+        delay: 0.5,
+    });
+    gsap.from(buttonEmail,{
+        y: 100,
+        scale:0.5,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.out",
+        delay: 0.7,
+    });
+</script>

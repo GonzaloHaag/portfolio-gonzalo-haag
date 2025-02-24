@@ -1,0 +1,25 @@
+---
+import Header from "../components/Header.astro"
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/code-dark.svg" />
+		<link rel="icon" type="image/svg+xml" href="/code-light.svg" media="(prefers-color-scheme:dark)" />
+		<title>Gonzalo Haag - Portfolio</title>
+		<meta
+			name="description"
+			content="Portfolio de Gonzalo Haag, desarrollador web especializado en Next.js, Prisma y PostgreSQL. Descubre mis proyectos, habilidades y experiencia en desarrollo de software."
+		/>
+		<meta name="author" content="Gonzalo Haag" />
+	</head>
+	<body class="bg-slate-200">
+		<Header />
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

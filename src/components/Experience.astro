@@ -1,0 +1,120 @@
+<section class="flex flex-col gap-y-6 py-20 bg-slate-900" id="experiencia">
+    <h2 class="text-3xl md:text-4xl text-center font-semibold text-orange-400">
+        Experiencia
+    </h2>
+    <div class="class-container">
+        <ol class="relative border-s border-gray-200 dark:border-gray-700">
+            <li class="mb-10 ms-4">
+                <div
+                    class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                >
+                </div>
+                <div class="li-container">
+                    <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white"
+                    >
+                        NTSS s.a.s - Desarrollador fullstack
+                    </h3>
+                    <time
+                        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                        >Marzo 2023 - Actualmente</time
+                    >
+                    <p
+                        class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 text-pretty"
+                    >
+                        Encargado de desarrollar soluciones backend utilizando
+                        Symfony y PHP, asegurando un código limpio, mantenible y
+                        escalable, lo que permite reducir los tiempos de
+                        respuesta de las APIs en un 25% y mejorar la experiencia
+                        del usuario final. También lidero la optimización de
+                        bases de datos SQL, realizando ajustes en consultas,
+                        índices y estructuras de datos, lo que resulta en una
+                        reducción del 40% en el tiempo de ejecución de consultas
+                        críticas y un mejor rendimiento general de las
+                        aplicaciones.
+                    </p>
+                </div>
+            </li>
+            <li class="mb-10 ms-4">
+                <div
+                    class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                >
+                </div>
+                <div class="li-container">
+                    <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white"
+                    >
+                        Desarrollador freelance
+                    </h3>
+                    <time
+                        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                        >Actualmente</time
+                    >
+                    <p
+                        class="text-base font-normal text-gray-500 dark:text-gray-400 text-pretty"
+                    >
+                        Desarrollo sistemas web a medida utilizando tecnologías
+                        como Next.js, PHP, Symfony, Laravel y PostgreSQL,
+                        seleccionando la tecnología más adecuada para cada
+                        proyecto según sus requisitos y escalabilidad. Optimizo
+                        el rendimiento de aplicaciones, reduciendo los tiempos
+                        de carga en un 30% mediante la optimización de consultas
+                        SQL, caching y ajustes en el código backend. Además
+                        diseño e integro APIs robustas para conectar sistemas
+                        externos y mejorar la funcionalidad de las aplicaciones,
+                        asegurando una comunicación eficiente y segura entre
+                        servicios.
+                    </p>
+                </div>
+            </li>
+            <li class="ms-4">
+                <div
+                    class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                >
+                </div>
+                <div class="li-container">
+                    <h3
+                        class="text-lg font-semibold text-gray-900 dark:text-white"
+                    >
+                        Programa No-Country
+                    </h3>
+                    <time
+                        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                        >Octubre 2023 - Diciembre 2023</time
+                    >
+                    <p
+                        class="text-base font-normal text-gray-500 dark:text-gray-400 text-pretty"
+                    >
+                        Desarrollamos una aplicación web para la gestión de
+                        inventario para una ferreteria local, utilizando
+                        tecnologías como React.js, Next.js, Node.js y MongoDB.
+                        La aplicación permite a los empleados gestionar el stock
+                        de productos, realizar pedidos a proveedores y generar
+                        reportes de ventas, lo que ha permitido a la empresa
+                        reducir los tiempos de gestión de inventario en un 50% y
+                        mejorar la eficiencia en la gestión de pedidos y ventas.
+                    </p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
+<style>
+    @keyframes show {
+        from {
+            scale: 10%;
+            opacity: 0;
+        }
+        to {
+            scale: 100%;
+            opacity: 1;
+        }
+    }
+    .li-container {
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+        animation-timeline: --reveal;
+        animation-range: entry 25% cover 35%;
+    }
+</style>
