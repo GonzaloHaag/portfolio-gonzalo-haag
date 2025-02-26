@@ -1,6 +1,12 @@
 ---
 import Header from "../components/Header.astro"
 import "../styles/global.css";
+
+interface Props {
+	title:string;
+	description:string;
+}
+const { title,description } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -9,10 +15,10 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/code-dark.svg" />
 		<link rel="icon" type="image/svg+xml" href="/code-light.svg" media="(prefers-color-scheme:dark)" />
-		<title>Gonzalo Haag - Portfolio</title>
+		<title>{title}</title>
 		<meta
 			name="description"
-			content="Portfolio de Gonzalo Haag, desarrollador web especializado en Next.js, Prisma y PostgreSQL. Descubre mis proyectos, habilidades y experiencia en desarrollo de software."
+			content={description}
 		/>
 		<meta name="author" content="Gonzalo Haag" />
 	</head>

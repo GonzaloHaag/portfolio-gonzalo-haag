@@ -11,7 +11,7 @@ import NavMobile from "./NavMobile.astro";
         role="navigation"
     >
         <div class="flex items-center gap-x-6 z-10">
-            <a href="/" class="text-3xl font-bold"> GH </a>
+            <a href="/" class="text-3xl font-bold hover:text-orange-400 transition-colors duration-300"> GH </a>
             <div class="flex items-center gap-x-2">
                 <a
                     href="https://github.com/GonzaloHaag"
@@ -23,8 +23,7 @@ import NavMobile from "./NavMobile.astro";
                     <svg
                         width={25}
                         height={25}
-                        fill="currentColor"
-                        class="group-hover:fill-slate-400 transition-colors duration-200"
+                        class="fill-slate-100 group-hover:fill-slate-400 transition-colors duration-200"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 496 512"
                     >
@@ -44,7 +43,7 @@ import NavMobile from "./NavMobile.astro";
                         width={25}
                         height={25}
                         fill="currentColor"
-                        class="group-hover:fill-blue-700 transition-colors duration-200"
+                        class="group-hover:fill-blue-500 transition-colors duration-200"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512"
                     >
@@ -82,13 +81,6 @@ import NavMobile from "./NavMobile.astro";
                     title="Habilidades"
                     class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-0 after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
                     href="#habilidades">Habilidades</a
-                >
-            </li>
-            <li>
-                <a
-                    title="Contacto"
-                    class="relative li_item after:content-[''] after:bg-orange-500 after:h-0.5 after:w-0 after:left-0 after:-bottom-[5px] after:absolute after:rounded-xl after:transition-all duration-300 hover:after:w-full"
-                    href="#">Contacto</a
                 >
             </li>
         </ul>
