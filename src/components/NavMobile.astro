@@ -1,4 +1,4 @@
-<div class="block md:hidden">
+<nav class="flex md:hidden">
     <button
         aria-label="abrir sidebar"
         type="button"
@@ -60,9 +60,9 @@
     </button>
     {/* Sidebar */}
     <div
-        class="fixed md:hidden top-0 -right-full h-dvh z-0 peer-focus:z-50 w-9/12 bg-slate-200 opacity-0 invisible peer-focus:opacity-100 peer-focus:visible peer-focus:right-0 transition-all duration-300"
+        class="fixed h-dvh top-0 right-0 bg-slate-200 z-50 invisible opacity-0 w-9/12 peer-focus:visible peer-focus:opacity-100 transition-all duration-300"
     >
-        <ul class="flex flex-col gap-y-6 md:hidden list-none items-center text-slate-950 mt-10">
+        <ul class="flex flex-col gap-y-6 md:hidden list-none items-center text-slate-950 mt-14">
             <li>
                 <a
                     title="Inicio"
@@ -98,4 +98,4 @@
         class="fixed md:hidden w-screen h-dvh inset-0 bg-black/60 -z-10 invisible opacity-0 peer-focus:opacity-100 peer-focus:z-20 transition-opacity duration-300 peer-focus:visible"
     >
     </div>
-</div>
+</>
