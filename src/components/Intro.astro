@@ -22,12 +22,14 @@
             >
                 Desarrollador Fullstack con experiencia en tecnologías web y
                 móviles. Especializado en PHP (Symfony), React.js (Next.js) y
-                bases de datos SQL. Desarrollo soluciones escalables y
-                optimizadas, asegurando integración eficiente de APIs y gestión
-                de servidores con Docker. Mi enfoque se centra en la creación de
-                aplicaciones dinámicas y eficientes, tanto en el frontend como
-                en el backend, con un fuerte énfasis en la calidad del código y
-                la experiencia del usuario.
+                bases de datos SQL, con un enfoque en la creación de soluciones
+                escalables, optimizadas y de alto rendimiento. Experto en
+                integración eficiente de APIs y gestión de servidores con
+                Docker. Apasionado por el desarrollo de aplicaciones
+                dinámicas y eficientes, asegurando calidad del código,
+                rendimiento y una excelente experiencia de usuario. Siempre en búsqueda de
+                nuevos retos y oportunidades para crear impacto a través de la
+                tecnología.
             </p>
             <div
                 class="flex flex-col md:flex-row items-center justify-center gap-y-4 gap-x-6 mt-4"
@@ -82,8 +84,8 @@
     const name = new SplitType("#name", { types: "words,chars" });
     const role = new SplitType("#role", { types: "words,chars" });
     const description = new SplitType("#description", { types: "lines" });
-    const buttonCv = document.getElementById('button_cv');
-    const buttonEmail = document.getElementById('button_email');
+    const buttonCv = document.getElementById("button_cv");
+    const buttonEmail = document.getElementById("button_email");
     name.chars?.forEach((char, index) => {
         gsap.from(char, {
             y: gsap.utils.random(-150, 150),
@@ -106,7 +108,7 @@
             delay: index * 0.03,
         });
     });
-    description.lines?.forEach((char,index) => {
+    description.lines?.forEach((char, index) => {
         gsap.from(char, {
             x: gsap.utils.random(-300, 300),
             opacity: 0,
@@ -115,17 +117,17 @@
             delay: index * 0.05,
         });
     });
-    gsap.from(buttonCv,{
+    gsap.from(buttonCv, {
         y: 100,
-        scale:0.5,
+        scale: 0.5,
         opacity: 0,
         duration: 0.5,
         ease: "back.out",
         delay: 0.5,
     });
-    gsap.from(buttonEmail,{
+    gsap.from(buttonEmail, {
         y: 100,
-        scale:0.5,
+        scale: 0.5,
         opacity: 0,
         duration: 0.5,
         ease: "back.out",

@@ -4,19 +4,41 @@ body {
     font-family: "Rubik", serif;
     @apply antialiased;
 }
-.class-container {
-  @apply w-full container px-4 mx-auto max-w-6xl;
+.card {
+  @apply bg-slate-900 text-slate-200 rounded-lg shadow-sm shadow-white flex flex-col gap-y-0 w-full h-full hover:shadow-lg transition-all duration-300;
+  animation: fadeInUp 0.5s forwards;
 }
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  .fade-in {
+@keyframes fadeInUp {
+  from {
     opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
+    transform: translateY(20%);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+.img-container {
+  @apply relative w-full h-60 overflow-hidden rounded-lg;
+}
+.text-icons-container {
+  @apply flex flex-col p-4;
+}
+.text-icons-container h4 {
+  @apply font-semibold text-lg;
+}
+.text-icons-container p {
+  @apply text-pretty text-base text-slate-300;
+}
+.text-icons-container div {
+  @apply w-full flex items-center gap-2 mt-2 mb-2;
+}
+.links-container {
+  @apply flex items-center justify-center gap-x-4 w-full;
+}
+.links-container a {
+  @apply text-slate-950 text-sm flex items-center justify-center gap-x-2 bg-slate-200 rounded-md hover:bg-orange-400 transition-colors duration-300 w-full p-2;
+}
+.links-container a svg {
+  @apply w-4 h-4 fill-slate-950;
+}
