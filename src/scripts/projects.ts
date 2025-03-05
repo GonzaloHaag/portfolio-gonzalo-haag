@@ -144,7 +144,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const projectCard = `
                 <article class="card">
                     <div class="img-container">
-                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full max-w-full h-72 rounded-lg hover:scale-110 transition-[scale] duration-200" loading="lazy" decoding="async" />
+                    <img src="${project.imageUrl}" alt="${project.title}" loading="lazy" decoding="async" />
                     </div>
                     <div class="text-icons-container">
                         <h4>${project.title}</h4>
