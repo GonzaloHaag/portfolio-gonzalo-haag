@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
@@ -6,45 +7,112 @@
   font-weight: 100 900;
   display: swap;
 }
+
 body {
-    font-family: 'Rubik', sans-serif;
-    @apply antialiased;
+  font-family: 'Rubik', sans-serif;
+  @apply antialiased;
 }
+
 .card {
-  @apply bg-slate-900 text-slate-200 rounded-lg shadow-sm shadow-white flex flex-col gap-y-0 w-full h-full hover:shadow-lg transition-all duration-300;
-  animation: fadeInUp 0.5s forwards;
+  @apply w-full h-full flex flex-col relative rounded-lg text-slate-200;
+  --border-angle: 0deg;
+  align-items: center;
+  box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+  animation: border-angle-rotate 2s infinite linear;
+  border: 0.2rem solid transparent;
+  position: relative;
+  background: linear-gradient(#0f172b, #0f172b) padding-box,
+    conic-gradient(from var(--border-angle),
+      oklch(70% 0.25 25deg),
+      oklch(70% 0.25 70deg),
+      oklch(70% 0.25 115deg),
+      oklch(70% 0.25 160deg),
+      oklch(70% 0.25 205deg),
+      oklch(70% 0.25 250deg),
+      oklch(70% 0.25 295deg),
+      oklch(70% 0.25 340deg),
+      oklch(70% 0.25 360deg)) border-box;
 }
-@keyframes fadeInUp {
+
+.card:before,
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 4px;
+  border-radius: 100%;
+  animation: border-angle-rotate 4s infinite linear;
+  z-index: -1;
+}
+
+.card:before {
+  inset: 0;
+  background: repeating-conic-gradient(from var(--border-angle),
+      var(--bg),
+      var(--bg) 30deg,
+      oklch(100% 50% 190deg) calc(360deg / 6)) border-box;
+}
+
+.card:after {
+  background: repeating-conic-gradient(from calc(var(--border-angle) * -1),
+      oklch(100% 40% 50deg),
+      black 60deg) border-box;
+}
+
+
+
+@keyframes border-angle-rotate {
+  from {
+    --border-angle: 0deg;
+  }
+
+  to {
+    --border-angle: 360deg;
+  }
+}
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20%);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0)
   }
 }
+
 .img-container {
-  @apply relative w-full h-60 overflow-hidden rounded-lg;
+  @apply relative w-full h-72 rounded-lg overflow-hidden;
 }
+
 .text-icons-container {
-  @apply flex flex-col p-4;
+  @apply flex flex-col p-4 w-full;
 }
+
 .text-icons-container h4 {
   @apply font-semibold text-lg;
 }
-.text-icons-container p {
+
+/* .text-icons-container p {
   @apply text-pretty text-base text-slate-300;
-}
+} */
 .text-icons-container div {
   @apply w-full flex items-center gap-2 mt-2 mb-2;
 }
+
 .links-container {
   @apply flex items-center justify-center gap-x-4 w-full;
 }
+
 .links-container a {
   @apply text-slate-950 text-sm flex items-center justify-center gap-x-2 bg-slate-200 rounded-md hover:bg-orange-400 transition-colors duration-300 w-full p-2;
 }
+
 .links-container a svg {
   @apply w-4 h-4 fill-slate-950;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }

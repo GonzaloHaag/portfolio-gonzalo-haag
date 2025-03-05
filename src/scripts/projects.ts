@@ -86,7 +86,7 @@ const projects: Projects[] = [
     },
     {
         id: crypto.randomUUID(),
-        title: "Baterías Giagnoni",
+        title: "Baterías Giagnoni - Landing page",
         description:
             "Landing page para un proveedor líder de baterías en Argentina, con auxilio 24/7 y reciclaje ecológico.",
         imageUrl: "/assets/projects/bateriasgiagnoni.webp",
@@ -142,13 +142,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 )
                 .join("");
             const projectCard = `
-                <div class="card">
+                <article class="card">
                     <div class="img-container">
-                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-full rounded-lg object-fit object-center" loading="lazy" decoding="async" />
+                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full max-w-full h-72 rounded-lg hover:scale-110 transition-[scale] duration-200" loading="lazy" decoding="async" />
                     </div>
                     <div class="text-icons-container">
                         <h4>${project.title}</h4>
-                        <p>${project.description}</p>
+                       
                         <div>
                              ${icons}
                         </div>
@@ -163,7 +163,7 @@ window.addEventListener("DOMContentLoaded", () => {
                                 </a>
                     </div>
                 </div>
-                </div>
+                </article>
             `;
             projectsContainer.innerHTML += projectCard;
         });
