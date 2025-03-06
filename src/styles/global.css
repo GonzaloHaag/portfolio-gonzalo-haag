@@ -3,64 +3,81 @@ body {
   font-family: 'Rubik Variable', sans-serif;
   @apply antialiased;
 }
-
+/* Hover elevation effect */
 .card {
-  @apply w-full h-full flex flex-col relative rounded-lg text-slate-200;
-  --border-angle: 0deg;
-  align-items: center;
-  box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
-  animation: border-angle-rotate 2s infinite linear;
-  border: 0.2rem solid transparent;
-  position: relative;
-  background: linear-gradient(#0f172b, #0f172b) padding-box,
-    conic-gradient(from var(--border-angle),
-      oklch(70% 0.25 25deg),
-      oklch(70% 0.25 70deg),
-      oklch(70% 0.25 115deg),
-      oklch(70% 0.25 160deg),
-      oklch(70% 0.25 205deg),
-      oklch(70% 0.25 250deg),
-      oklch(70% 0.25 295deg),
-      oklch(70% 0.25 340deg),
-      oklch(70% 0.25 360deg)) border-box;
+  @apply relative h-full;
+  animation: fadeIn 0.5s forwards;
+}
+.elevation-effect {
+  @apply absolute inset-0 w-full h-full rounded-xl bg-transparent transition-all duration-500 ease-out;
+}
+.card:hover .elevation-effect {
+  @apply translate-y-[-8px] shadow-[0_20px_80px_-10px_rgba(234,88,12,0.3)]
+}
+.card-content {
+  @apply relative h-full rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-800 hover:border-orange-600/70 flex flex-col;
+}
+.glow-effect {
+  @apply absolute inset-0 opacity-0 transition-opacity duration-500 bg-gradient-to-r from-orange-600/10 to-amber-500/10 rounded-xl
+}
+.card:hover .glow-effect {
+  @apply opacity-100 
+}
+.img-container {
+  @apply relative h-48 w-full overflow-hidden;
+}
+.img-container img {
+  @apply object-cover w-full h-full transition-transform duration-700 ease-out;
+}
+.card:hover .img-container img {
+  @apply scale-110
+}
+.img-container div {
+  @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-70;
+}
+.card-info {
+  @apply p-6 flex flex-col;
+}
+.card-title {
+  @apply flex justify-between items-start mb-2;
+}
+.card-title h3 {
+  @apply text-lg font-bold text-white transition-colors duration-300;
+}
+.card:hover .card-title h3 {
+  @apply text-orange-400;
+}
+.card-info p {
+  @apply text-gray-400 text-base mt-2 text-pretty transition-colors duration-300 min-h-[85px];
+}
+.card:hover .card-info p {
+  @apply text-gray-300;
+}
+.icons-container {
+  @apply flex flex-wrap gap-2 mt-4;
+}
+.action-buttons {
+  @apply px-6 pb-6 pt-2 mt-auto;
+}
+.buttons {
+  @apply flex gap-3 items-center w-full;
+}
+.link-demo {
+  @apply flex-1 flex items-center justify-center gap-x-2 rounded-lg bg-orange-600 text-slate-100 hover:bg-orange-700 transition-colors duration-300 px-4 py-2 z-10;
+}
+.link-codigo {
+  @apply flex-1 flex items-center justify-center gap-x-2 rounded-lg border border-gray-600 text-gray-200 hover:bg-gray-700 hover:text-white transition-colors duration-300 px-4 py-2 z-10;
+}
+.card:hover .link-codigo {
+  @apply border-orange-500/50;
+}
+.bottom-gradient {
+  @apply h-1 w-full bg-gradient-to-r from-orange-600 to-amber-500 transform scale-x-0 transition-transform duration-500 origin-left mt-auto;
+}
+.card:hover .bottom-gradient {
+  @apply scale-x-100;
 }
 
-.card:before,
-.card:after {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: 4px;
-  border-radius: 100%;
-  animation: border-angle-rotate 4s infinite linear;
-  z-index: -1;
-}
-
-.card:before {
-  inset: 0;
-  background: repeating-conic-gradient(from var(--border-angle),
-      var(--bg),
-      var(--bg) 30deg,
-      oklch(100% 50% 190deg) calc(360deg / 6)) border-box;
-}
-
-.card:after {
-  background: repeating-conic-gradient(from calc(var(--border-angle) * -1),
-      oklch(100% 40% 50deg),
-      black 60deg) border-box;
-}
-
-
-
-@keyframes border-angle-rotate {
-  from {
-    --border-angle: 0deg;
-  }
-
-  to {
-    --border-angle: 360deg;
-  }
-}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -69,44 +86,4 @@ body {
   to {
     opacity: 1;
   }
-}
-
-.img-container {
-  @apply relative w-full h-72 rounded-lg overflow-hidden;
-}
-.img-container img {
-  @apply w-full max-w-full h-72 rounded-lg hover:scale-110 transition-[scale] duration-200
-}
-
-.text-icons-container {
-  @apply flex flex-col p-4 w-full;
-}
-
-.text-icons-container h4 {
-  @apply font-semibold text-lg;
-}
-
-/* .text-icons-container p {
-  @apply text-pretty text-base text-slate-300;
-} */
-.text-icons-container div {
-  @apply w-full flex items-center gap-2 mt-2 mb-2;
-}
-
-.links-container {
-  @apply flex items-center justify-center gap-x-4 w-full;
-}
-
-.links-container a {
-  @apply text-slate-950 text-sm flex items-center justify-center gap-x-2 bg-slate-200 rounded-md hover:bg-orange-400 transition-colors duration-300 w-full p-2;
-}
-
-.links-container a svg {
-  @apply w-4 h-4 fill-slate-950;
-}
-
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
 }

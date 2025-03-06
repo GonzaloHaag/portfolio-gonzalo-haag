@@ -51,7 +51,7 @@ const projects: Projects[] = [
         id: crypto.randomUUID(),
         title: "TesloShop",
         description:
-            "Ecommerce de productos con carrito de compras y pagos con paypal",
+            "Ecommerce con catálogo, carrito, pagos por PayPal, gestión de inventario y compra optimizada",
         imageUrl: "/assets/projects/tesloshop.webp",
         link: "https://gh-tienda-tesloshop.vercel.app/",
         linkGithub: "https://github.com/GonzaloHaag/Teslo-shop",
@@ -82,11 +82,11 @@ const projects: Projects[] = [
         imageUrl: "/assets/projects/books_challenge.webp",
         link: "https://booskchallenge.netlify.app/",
         linkGithub: "https://github.com/GonzaloHaag/booksChallenge",
-        tags: ["react", "typescript"],
+        tags: ["react", "typescript","tailwindcss"],
     },
     {
         id: crypto.randomUUID(),
-        title: "Baterías Giagnoni - Landing page",
+        title: "Baterías Giagnoni",
         description:
             "Landing page para un proveedor líder de baterías en Argentina, con auxilio 24/7 y reciclaje ecológico.",
         imageUrl: "/assets/projects/bateriasgiagnoni.webp",
@@ -96,7 +96,7 @@ const projects: Projects[] = [
     },
     {
         id: crypto.randomUUID(),
-        title: "Clon de la WEB de los ESLAND 2024",
+        title: "Clon de la WEB de los ESLAND",
         description:
             "Clon interactivo y responsive de los ESLAND, enfocado en demostrar mis habilidades de optimización y desarrollo de código",
         imageUrl: "/assets/projects/clon-esland.webp",
@@ -142,28 +142,62 @@ window.addEventListener("DOMContentLoaded", () => {
                 )
                 .join("");
             const projectCard = `
-                <article class="card">
-                    <div class="img-container">
-                    <img src="${project.imageUrl}" alt="${project.title}" loading="lazy" decoding="async" />
-                    </div>
-                    <div class="text-icons-container">
-                        <h4>${project.title}</h4>
-                       
-                        <div>
-                             ${icons}
-                        </div>
-                    <div class="links-container">
-                                 <a href="${project.link}" target="_blank">
-                                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
-                                    <span>Ver proyecto</span>
-                                </a>
-                                 <a href="${project.linkGithub}" target="_blank">
-                                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-                                    <span>Repositorio</span>
-                                </a>
-                    </div>
-                </div>
-                </article>
+              <div class="card">
+  <!-- Hover elevation effect -->
+  <div
+    class="elevation-effect"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Card Content -->
+  <div class="card-content">
+    <!-- Glow effect on hover -->
+    <div class="glow-effect"></div>
+
+    <!-- Image Container -->
+    <div class="img-container">
+      <img
+        src="${project.imageUrl}"
+        alt="${project.title}"
+      />
+      <div></div>
+    </div>
+
+    <!-- Content -->
+    <div class="card-info">
+      <div class="card-title">
+        <h3>
+          ${project.title}
+        </h3>
+      </div>
+      <p>
+        ${project.description}
+      </p>
+      <div class="icons-container">
+        ${icons}
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <div class="buttons">
+        <a href="${project.link}" title="Ver demo" target="_blank" class="link-demo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-dasharray="28" stroke-dashoffset="28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 6l2 -2c1 -1 3 -1 4 0l1 1c1 1 1 3 0 4l-5 5c-1 1 -3 1 -4 0M11 18l-2 2c-1 1 -3 1 -4 0l-1 -1c-1 -1 -1 -3 0 -4l5 -5c1 -1 3 -1 4 0"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="28;0"/></path></svg>
+          <span class="text-sm">Demo</span>
+        </a>
+        <a href="${project.linkGithub}" title="Ver código" target="_blank" class="link-codigo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.7s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" values="10;0"/></path></g></svg>
+          <span class="text-sm">Código</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Gradient Line -->
+    <div class="bottom-gradient"></div>
+  </div>
+</div>
+
+
             `;
             projectsContainer.innerHTML += projectCard;
         });
