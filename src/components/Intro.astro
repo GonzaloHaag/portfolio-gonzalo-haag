@@ -5,23 +5,23 @@
     <div class="flex flex-col items-center p-4">
         <div class="flex flex-col text-center">
             <h1
-                class="text-4xl md:text-7xl font-semibold text-orange-600"
+                class="fadeIn text-4xl md:text-7xl font-semibold text-orange-600"
                 id="name"
             >
                 GONZALO HAAG
             </h1>
             <h2
-                class="text-xl md:text-3xl font-semibold text-slate-400"
+                class="fadeIn text-xl md:text-3xl font-semibold text-slate-300"
                 id="role"
             >
                 Fullstack Developer
             </h2>
             <p
-                class="text-pretty mt-4 text-center text-base md:text-lg max-w-[70ch]"
+                class="fadeIn text-pretty mt-4 text-center text-sm md:text-lg max-w-[70ch] text-slate-100"
                 id="description"
             >
                 Estudiante de Ingeniería Informática, especializado en PHP
-                (Symfony), React.js (Next.js) y bases de datos SQL/NoSQL.
+                (Symfony), Typescript, React.js (Next.js) y bases de datos SQL/NoSQL.
                 Experto en desarrollo de soluciones escalables, integración de
                 APIs y gestión con Docker. Apasionado por crear aplicaciones
                 eficientes y de alto rendimiento, siempre en busca de nuevos
@@ -33,7 +33,7 @@
                 <a
                     type="button"
                     title="Descargar cv"
-                    class="flex items-center gap-x-2 border border-gray-600/40 rounded p-2 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200"
+                    class="fadeInUp flex items-center gap-x-2 border border-gray-600/40 rounded p-2 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200"
                     href="/GONZALOHAAGCV.pdf"
                     target="_blank"
                     id="button_cv"
@@ -53,7 +53,7 @@
                 <a
                     type="button"
                     title="Enviar email"
-                    class="flex items-center gap-x-2 border border-gray-600/40 rounded p-2 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200"
+                    class="fadeInUp flex items-center gap-x-2 border border-gray-600/40 rounded p-2 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200"
                     href="mailto:gonzalohaag13@gmail.com"
                     target="_blank"
                     id="button_email"
@@ -74,59 +74,3 @@
         </div>
     </div>
 </section>
-<script>
-    import { gsap } from "gsap";
-    import SplitType from "split-type";
-    const name = new SplitType("#name", { types: "words,chars" });
-    const role = new SplitType("#role", { types: "words,chars" });
-    const description = new SplitType("#description", { types: "lines" });
-    const buttonCv = document.getElementById("button_cv");
-    const buttonEmail = document.getElementById("button_email");
-    name.chars?.forEach((char, index) => {
-        gsap.from(char, {
-            y: gsap.utils.random(-150, 150),
-            x: gsap.utils.random(-300, 300),
-            rotate: gsap.utils.random(-360, 360),
-            scale: gsap.utils.random(0, 2),
-            opacity: 0,
-            duration: 1,
-            ease: "back.out",
-            delay: index * 0.01,
-        });
-    });
-    role.chars?.forEach((char, index) => {
-        gsap.from(char, {
-            y: gsap.utils.random(-150, 150),
-            scale: gsap.utils.random(0, 2),
-            opacity: 0,
-            duration: 0.75,
-            ease: "back.out",
-            delay: index * 0.03,
-        });
-    });
-    description.lines?.forEach((char, index) => {
-        gsap.from(char, {
-            x: gsap.utils.random(-300, 300),
-            opacity: 0,
-            duration: 0.5,
-            ease: "back.out",
-            delay: index * 0.05,
-        });
-    });
-    gsap.from(buttonCv, {
-        y: 100,
-        scale: 0.5,
-        opacity: 0,
-        duration: 0.5,
-        ease: "back.out",
-        delay: 0.5,
-    });
-    gsap.from(buttonEmail, {
-        y: 100,
-        scale: 0.5,
-        opacity: 0,
-        duration: 0.5,
-        ease: "back.out",
-        delay: 0.7,
-    });
-</script>

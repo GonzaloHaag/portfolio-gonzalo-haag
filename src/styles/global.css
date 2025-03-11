@@ -3,6 +3,18 @@ body {
   font-family: 'Rubik Variable', sans-serif;
   @apply antialiased;
 }
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
 /* Hover elevation effect */
 .card {
   @apply relative h-full;
@@ -85,5 +97,16 @@ body {
 
   to {
     opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(100%)
   }
 }

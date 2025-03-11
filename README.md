@@ -7,8 +7,6 @@ Este es el repositorio de mi portafolio personal, desarrollado con [Astro](https
 - **Astro**: Framework para construir sitios web rápidos.
 - **TailwindCSS**: Framework de CSS para diseñar interfaces de usuario.
 - **TypeScript**: Lenguaje de programación que extiende JavaScript.
-- **GSAP**: Biblioteca para animaciones.
-- **Split-Type**: Biblioteca para manipulación de texto.
 
 ## Estructura del Proyecto
 
